@@ -81,11 +81,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+            
+            if(this.gameObject.transform.position.y < 1){
+                this.gameObject.transform.position = new Vector3(2,4,4);
+                
+            }
         }
 
 
         private void PlayLandingSound()
         {
+            
+//            Debug.Log("PlayLandingSound");
+            
+//            transform.position = Camera.main.transform.position + Vector3.up * 0.5;
+//            Debug.Log(Camera.main.transform.position.y);
+            
+            if (Camera.main.transform.position.y < 3) {
+                Debug.Log("game over");
+                
+                
+//                player = GameObject.Find("First Person Controller");
+//                player.transform.position = Vector3(0,0,0);
+            }
+            
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
@@ -240,7 +259,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void OnControllerColliderHit(ControllerColliderHit hit)
+        void OnControllerColliderHit(ControllerColliderHit hit)
         {
             Rigidbody body = hit.collider.attachedRigidbody;
             //dont move the rigidbody if the character is on top of it
@@ -255,5 +274,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
+        
+//        void OnCollisionEnter(Collision other) {
+//            Debug.Log("wut");
+//            
+//            if (other.gameObject.tag == "Terrain") {
+//                //GameOver
+//                Debug.Log("wut");
+//                //transform.position = new Vector3(0, 0, 0);
+//            }
+//       }
     }
 }
