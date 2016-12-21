@@ -90,6 +90,22 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 23800000, guid: 7eb61524581c1414192192543612611d, type: 2}
+--- !u!1 &50867821 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100004, guid: 351657780d70c42418bfe22d1f5231af, type: 3}
+  m_PrefabInternal: {fileID: 1579297137}
+--- !u!64 &50867825
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 50867821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300002, guid: 351657780d70c42418bfe22d1f5231af, type: 3}
 --- !u!1 &61626104
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,6 +186,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 16
+--- !u!1 &112715263 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: 351657780d70c42418bfe22d1f5231af, type: 3}
+  m_PrefabInternal: {fileID: 1579297137}
+--- !u!64 &112715267
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 112715263}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: 351657780d70c42418bfe22d1f5231af, type: 3}
 --- !u!1 &134392597
 GameObject:
   m_ObjectHideFlags: 0
