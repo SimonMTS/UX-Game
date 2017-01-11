@@ -32,6 +32,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 character.Move(agent.desiredVelocity, false, false);
             else
                 character.Move(Vector3.zero, false, false);
+                
+            // Check if we've reached the destination
+            if (!agent.pathPending)
+            {
+                if (agent.remainingDistance < 0.5)
+                {
+                    Debug.Log("done");
+                }
+            }
         }
 
 
