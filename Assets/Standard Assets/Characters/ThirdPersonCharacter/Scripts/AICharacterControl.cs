@@ -39,6 +39,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 if (agent.remainingDistance < 0.5)
                 {
                     Debug.Log("done");
+                    this.gameObject.transform.position = new Vector3(3,3,1);
                 }
             }
         }
@@ -48,5 +49,10 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             this.target = target;
         }
+        
+//        public void transport()
+//        {
+//            this.gameObject.transform.position = new Vector3(3,3,1);
+//        }
     }
 }

@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public GameObject AI;
+
         // Use this for initialization
         private void Start()
         {
@@ -85,26 +87,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if(this.gameObject.transform.position.y < 1){
                 this.gameObject.transform.position = new Vector3(2,4,4);
                 
+                AI = GameObject.Find("AIThirdPersonController");
+                
+//                AI.gameObject.transform.position = new Vector3(3,3,-2);
+                
+                Debug.Log(AI.transform.position);
             }
         }
 
 
         private void PlayLandingSound()
         {
-            
-//            Debug.Log("PlayLandingSound");
-            
-//            transform.position = Camera.main.transform.position + Vector3.up * 0.5;
-//            Debug.Log(Camera.main.transform.position.y);
-            
-            if (Camera.main.transform.position.y < 3) {
-                Debug.Log("game over");
-                
-                
-//                player = GameObject.Find("First Person Controller");
-//                player.transform.position = Vector3(0,0,0);
-            }
-            
             m_AudioSource.clip = m_LandSound;
             m_AudioSource.Play();
             m_NextStep = m_StepCycle + .5f;
@@ -274,15 +267,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
-        
-//        void OnCollisionEnter(Collision other) {
-//            Debug.Log("wut");
-//            
-//            if (other.gameObject.tag == "Terrain") {
-//                //GameOver
-//                Debug.Log("wut");
-//                //transform.position = new Vector3(0, 0, 0);
-//            }
-//       }
     }
 }
